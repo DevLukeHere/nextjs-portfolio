@@ -1,6 +1,5 @@
 "use client";
 
-// import { Inter } from "@next/font/google";
 import { faMoon } from "@fortawesome/free-regular-svg-icons";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,8 +10,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
 import { useState } from "react";
-
-// const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
