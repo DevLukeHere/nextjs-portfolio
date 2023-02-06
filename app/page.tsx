@@ -87,20 +87,20 @@ export default function Home() {
         <section>
           <div>
             <h3 className="text-3xl py-1">services I offer</h3>
-            <p className="text-md py-2 leading-8 text-gray-800">
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa,
               aperiam? <span className="text-teal-500">Lorem.</span> Lorem,
               ipsum dolor. <span className="text-teal-500">Lorem.</span> Lorem
               ipsum dolor sit, amet consectetur adipisicing elit. Rem laudantium
               soluta libero.
             </p>
-            <p className="text-md py-2 leading-8 text-gray-800">
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
               mollitia sunt impedit?
             </p>
           </div>
           <div className="lg:flex gap-10">
-            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white">
               {/* import card images */}
               {/* <Image src="" width={100} height={100} alt="project images" /> */}
               <h3 className="text-lg font-medium pt-8 pb-2">
@@ -116,7 +116,7 @@ export default function Home() {
               <p className="text-gray-800 py-1">Lorem, ipsum dolor.</p>
             </div>
 
-            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white">
               {/* import card images */}
               {/* <Image src="" width={100} height={100} alt="project images" /> */}
               <h3 className="text-lg font-medium pt-8 pb-2">
@@ -132,7 +132,7 @@ export default function Home() {
               <p className="text-gray-800 py-1">Lorem, ipsum dolor.</p>
             </div>
 
-            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white">
               {/* import card images */}
               {/* <Image src="" width={100} height={100} alt="project images" /> */}
               <h3 className="text-lg font-medium pt-8 pb-2">
