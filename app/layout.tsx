@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Lato } from "next/font/google";
+import { ReactNode } from "react";
 
 // If loading a variable font, you don't need to specify the font weight
 const lato = Lato({
@@ -12,7 +13,7 @@ const lato = Lato({
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en" className={lato.className}>
