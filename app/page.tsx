@@ -9,7 +9,14 @@ import {
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
+// import { Abhaya_Libre } from "@next/font/google";
 import { useState } from "react";
+
+// const abhayaLibre = Abhaya_Libre({
+//   weight: ["400", "500", "600", "700", "800"],
+//   subsets: ["latin"],
+//   display: "optional",
+// });
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -26,16 +33,19 @@ export default function Home() {
             <h1 className="text-xl font-burtons">luke wong</h1>
             <ul className="flex items-center">
               <li>
-                <FontAwesomeIcon
-                  onClick={handleClick}
-                  icon={faMoon}
-                  className="cursor-pointer text-2xl"
-                />
-                <FontAwesomeIcon
-                  onClick={handleClick}
-                  icon={faSun}
-                  className="cursor-pointer text-2xl"
-                />
+                {darkMode ? (
+                  <FontAwesomeIcon
+                    onClick={handleClick}
+                    icon={faSun}
+                    className="cursor-pointer text-2xl dark:text-white"
+                  />
+                ) : (
+                  <FontAwesomeIcon
+                    onClick={handleClick}
+                    icon={faMoon}
+                    className="cursor-pointer text-2xl"
+                  />
+                )}
               </li>
               <li>
                 <a
@@ -49,10 +59,10 @@ export default function Home() {
           </nav>
 
           <div className="text-center p-10">
-            <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl">
+            <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl font-burtons">
               luke wong
             </h2>
-            <h3 className="text-2xl py-2 md:text-3xl">Developer & hacker.</h3>
+            <h3 className="text-2xl py-2 md:text-3xl">Developer && hacker.</h3>
             <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-lg mx-auto">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Laudantium aliquid beatae neque optio.
