@@ -9,6 +9,7 @@ import {
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
 // If loading a variable font, you don't need to specify the font weight
@@ -20,6 +21,16 @@ const lato = Lato({
 });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  // useEffect(() => {
+  //   window.addEventListener('scroll', () => {
+  //       if (window.scrollY > 400) {
+  //           setShowTopBtn(true);
+  //       } else {
+  //           setShowTopBtn(false);
+  //       }
+  //   });
+  // }, []);
+
   return (
     <html lang="en" className={lato.className}>
       {/*
@@ -28,7 +39,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       */}
       <head />
       <body>
+        {/* scroll to top button */}
+        <button className="rounded-full bg-teal-600 fixed w-12 h-12 right-10 z-10 bottom-10 border-black border-solid border">
+          <FontAwesomeIcon className="text-gray-200" icon={faArrowUp} />
+        </button>
+
         {children}
+
         <footer>
           <div className="bg-teal-600 py-3.5 px-4 grid grid-rows-2 justify-items-center gap-2 content-center items-center sm:flex sm:justify-between">
             <p className="text-gray-200 text-sm">
