@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 // import { Abhaya_Libre } from "@next/font/google";
 import { useState } from "react";
+import Link from "next/link";
 
 // const abhayaLibre = Abhaya_Libre({
 //   weight: ["400", "500", "600", "700", "800"],
