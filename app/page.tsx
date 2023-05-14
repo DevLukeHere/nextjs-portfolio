@@ -60,7 +60,6 @@ export default function Home() {
               </li>
             </ul>
           </nav>
-
           <div className="text-center p-10">
             <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl font-burtons">
               luke wong
@@ -93,9 +92,134 @@ export default function Home() {
               />
             </a>
           </div>
-          <div className="relative bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 mx-auto overflow-hidden md:h-96 md:w-96">
+          <div className="relative bg-gradient-to-b from-teal-500 rounded-full w-56 h-56 mt-20 mx-auto mb-20 overflow-hidden md:h-96 md:w-96">
             {/* import image of profile */}
             {/* <Image src="" fill style={{ objectFit: "cover" }} alt="profile photo" /> */}
+          </div>
+        </section>
+
+        <section>
+          <h3 className="text-3xl py-1 dark:text-gray-200">my journey</h3>
+          <div className="my-4 grid md:grid-cols-[auto_1fr]">
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 bg-pink-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center">
+                <p className="capitalize text-black font-bold text-xs">
+                  jun 2016
+                </p>
+              </div>
+              <div className="w-1 h-5 bg-white drop-shadow-md"></div>
+
+              <div className="w-16 h-16 bg-blue-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center">
+                <p className="capitalize text-black font-bold text-xs">
+                  oct 2016
+                </p>
+              </div>
+              <div className="w-1 h-5 bg-white drop-shadow-md"></div>
+
+              <div className="w-16 h-16 bg-purple-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center">
+                <p className="capitalize text-black font-bold text-xs">
+                  oct 2017
+                </p>
+              </div>
+              <div className="w-1 h-10 bg-white drop-shadow-md"></div>
+
+              <div className="w-16 h-16 bg-red-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center">
+                <p className="capitalize text-black font-bold text-xs">
+                  jul 2019
+                </p>
+              </div>
+              <div className="w-1 h-3 bg-white drop-shadow-md"></div>
+
+              <div className="w-16 h-16 bg-green-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center">
+                <p className="capitalize text-black font-bold text-xs">
+                  dec 2019
+                </p>
+              </div>
+              <div className="w-1 h-10 bg-white drop-shadow-md"></div>
+
+              <div className="w-16 h-16 bg-yellow-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center">
+                <p className="capitalize text-black font-bold text-xs">
+                  present
+                </p>
+              </div>
+            </div>
+
+            <div className="">
+              {/* <div className="p-5 bg-white drop-shadow-md rounded-lg">
+                <p className="capitalize text-teal-600 font-extrabold text-sm">
+                  jun 2016
+                </p>
+                <h4 className="text-gray-800 font-bold text-lg">
+                  Graduated @ The University of Birmingham.
+                </h4>
+                <p className="text-gray-800 text-base">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+                  a provident ea, at repellat architecto beatae omnis neque
+                  necessitatibus alias. Deserunt, ducimus natus sed eos odio ea
+                  excepturi exercitationem aperiam!
+                </p>
+              </div>
+              
+              <div className="p-5 bg-white drop-shadow-md rounded-lg">
+                <p className="capitalize text-teal-600 font-extrabold text-sm">
+                  oct 2016
+                </p>
+                <h4 className="text-gray-800 font-bold text-lg">
+                  Chemist @ Rovski Sdn. Bhd.
+                </h4>
+                <p className="text-gray-800 text-base">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+                  a provident ea, at repellat architecto beatae omnis neque
+                  necessitatibus alias. Deserunt, ducimus natus sed eos odio ea
+                  excepturi exercitationem aperiam!
+                </p>
+              </div>
+
+              <div className="p-5 bg-white drop-shadow-md rounded-lg">
+                <p className="capitalize text-teal-600 font-extrabold text-sm">
+                  oct 2017
+                </p>
+                <h4 className="text-gray-800 font-bold text-lg">
+                  Project Engineer @ Lipochem Sdn. Bhd.
+                </h4>
+                <p className="text-gray-800 text-base">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+                  a provident ea, at repellat architecto beatae omnis neque
+                  necessitatibus alias. Deserunt, ducimus natus sed eos odio ea
+                  excepturi exercitationem aperiam!
+                </p>
+              </div>
+
+              <div className="p-5 bg-white drop-shadow-md rounded-lg">
+                <p className="capitalize text-teal-600 font-extrabold text-sm">
+                  jul 2019
+                </p>
+                <h4 className="text-gray-800 font-bold text-lg">
+                  Enrolled @ NEXT Academy.
+                </h4>
+                <p className="text-gray-800 text-base">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+                  a provident ea, at repellat architecto beatae omnis neque
+                  necessitatibus alias. Deserunt, ducimus natus sed eos odio ea
+                  excepturi exercitationem aperiam!
+                </p>
+              </div>
+
+              <div className="p-5 bg-white drop-shadow-md rounded-lg">
+                <p className="capitalize text-teal-600 font-extrabold text-sm">
+                  dec 2019
+                </p>
+                <h4 className="text-gray-800 font-bold text-lg">
+                  Web Developer @ Hiredly.
+                </h4>
+                <p className="text-gray-800 text-base">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+                  a provident ea, at repellat architecto beatae omnis neque
+                  necessitatibus alias. Deserunt, ducimus natus sed eos odio ea
+                  excepturi exercitationem aperiam!
+                </p>
+              </div> */}
+            </div>
           </div>
         </section>
 
