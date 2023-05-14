@@ -8,9 +8,10 @@ import {
   faLinkedin,
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
+import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
 // import { Abhaya_Libre } from "@next/font/google";
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import Link from "next/link";
 
 // const abhayaLibre = Abhaya_Libre({
@@ -21,9 +22,55 @@ import Link from "next/link";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const experiences = [
+    {
+      id: "0",
+      time: "jun 2016",
+      title: "Graduated @ The University of Birmingham.",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero a provident ea, at repellat architecto beatae omnisneque necessitatibus alias. Deserunt, ducimus natus sedeos odio ea excepturi exercitationem aperiam",
+    },
+    {
+      id: "1",
+      time: "oct 2016",
+      title: "Chemist @ Rovski Sdn. Bhd.",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero a provident ea, at repellat architecto beatae omnisneque necessitatibus alias. Deserunt.",
+    },
+    {
+      id: "2",
+      time: "oct 2016",
+      title: "Project Engineer @ Lipochem Sdn. Bhd.",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero a provident ea, at repellat architecto beatae omnisneque necessitatibus alias. Deserunt, ducimus natus sedeos odio ea excepturi exercitationem aperiam. Deserunt, ducimus natus sedeos odio ea excepturi exercitationem aperiam",
+    },
+    {
+      id: "3",
+      time: "jul 2019",
+      title: "Enrolled @ NEXT Academy.",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero a provident ea, at repellat architecto beatae omnisneque necessitatibus alias. Deserunt, ducimus natus sedeos odio ea excepturi exercitationem aperiam, Deserunt, ducimus natus sedeos odio ea excepturi exercitationem aperiam, Deserunt, ducimus natus sedeos odio ea excepturi exercitationem aperiam.",
+    },
+    {
+      id: "4",
+      time: "dec 2019",
+      title: "Web Developer @ Hiredly.",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero a provident ea, at repellat architecto beatae omnisneque necessitatibus alias. Deserunt, ducimus natus sedeos odio ea excepturi.",
+    },
+  ];
 
   const handleClick = () => {
     setDarkMode(!darkMode);
+  };
+
+  const handleOpenDialog = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleCloseDialog = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -102,39 +149,54 @@ export default function Home() {
           <h3 className="text-3xl py-1 dark:text-gray-200">my journey</h3>
           <div className="my-4 grid md:grid-cols-[auto_1fr]">
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-pink-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center">
+              <button
+                onClick={handleOpenDialog}
+                className="w-16 h-16 bg-pink-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center"
+              >
                 <p className="capitalize text-black font-bold text-xs">
                   jun 2016
                 </p>
-              </div>
+              </button>
               <div className="w-1 h-5 bg-white drop-shadow-md"></div>
 
-              <div className="w-16 h-16 bg-blue-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center">
+              <button
+                onClick={handleOpenDialog}
+                className="w-16 h-16 bg-blue-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center"
+              >
                 <p className="capitalize text-black font-bold text-xs">
                   oct 2016
                 </p>
-              </div>
+              </button>
               <div className="w-1 h-5 bg-white drop-shadow-md"></div>
 
-              <div className="w-16 h-16 bg-purple-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center">
+              <button
+                onClick={handleOpenDialog}
+                className="w-16 h-16 bg-purple-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center"
+              >
                 <p className="capitalize text-black font-bold text-xs">
                   oct 2017
                 </p>
-              </div>
+              </button>
               <div className="w-1 h-10 bg-white drop-shadow-md"></div>
 
-              <div className="w-16 h-16 bg-red-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center">
+              <button
+                onClick={handleOpenDialog}
+                className="w-16 h-16 bg-red-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center"
+              >
                 <p className="capitalize text-black font-bold text-xs">
                   jul 2019
                 </p>
-              </div>
+              </button>
               <div className="w-1 h-3 bg-white drop-shadow-md"></div>
 
-              <div className="w-16 h-16 bg-green-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center">
+              <button
+                onClick={handleOpenDialog}
+                className="w-16 h-16 bg-green-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center"
+              >
                 <p className="capitalize text-black font-bold text-xs">
                   dec 2019
                 </p>
-              </div>
+              </button>
               <div className="w-1 h-10 bg-white drop-shadow-md"></div>
 
               <div className="w-16 h-16 bg-yellow-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center">
@@ -144,82 +206,42 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="">
-              {/* <div className="p-5 bg-white drop-shadow-md rounded-lg">
-                <p className="capitalize text-teal-600 font-extrabold text-sm">
-                  jun 2016
-                </p>
-                <h4 className="text-gray-800 font-bold text-lg">
-                  Graduated @ The University of Birmingham.
-                </h4>
-                <p className="text-gray-800 text-base">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                  a provident ea, at repellat architecto beatae omnis neque
-                  necessitatibus alias. Deserunt, ducimus natus sed eos odio ea
-                  excepturi exercitationem aperiam!
-                </p>
-              </div>
-              
-              <div className="p-5 bg-white drop-shadow-md rounded-lg">
-                <p className="capitalize text-teal-600 font-extrabold text-sm">
-                  oct 2016
-                </p>
-                <h4 className="text-gray-800 font-bold text-lg">
-                  Chemist @ Rovski Sdn. Bhd.
-                </h4>
-                <p className="text-gray-800 text-base">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                  a provident ea, at repellat architecto beatae omnis neque
-                  necessitatibus alias. Deserunt, ducimus natus sed eos odio ea
-                  excepturi exercitationem aperiam!
-                </p>
-              </div>
-
-              <div className="p-5 bg-white drop-shadow-md rounded-lg">
-                <p className="capitalize text-teal-600 font-extrabold text-sm">
-                  oct 2017
-                </p>
-                <h4 className="text-gray-800 font-bold text-lg">
-                  Project Engineer @ Lipochem Sdn. Bhd.
-                </h4>
-                <p className="text-gray-800 text-base">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                  a provident ea, at repellat architecto beatae omnis neque
-                  necessitatibus alias. Deserunt, ducimus natus sed eos odio ea
-                  excepturi exercitationem aperiam!
-                </p>
-              </div>
-
-              <div className="p-5 bg-white drop-shadow-md rounded-lg">
-                <p className="capitalize text-teal-600 font-extrabold text-sm">
-                  jul 2019
-                </p>
-                <h4 className="text-gray-800 font-bold text-lg">
-                  Enrolled @ NEXT Academy.
-                </h4>
-                <p className="text-gray-800 text-base">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                  a provident ea, at repellat architecto beatae omnis neque
-                  necessitatibus alias. Deserunt, ducimus natus sed eos odio ea
-                  excepturi exercitationem aperiam!
-                </p>
-              </div>
-
-              <div className="p-5 bg-white drop-shadow-md rounded-lg">
-                <p className="capitalize text-teal-600 font-extrabold text-sm">
-                  dec 2019
-                </p>
-                <h4 className="text-gray-800 font-bold text-lg">
-                  Web Developer @ Hiredly.
-                </h4>
-                <p className="text-gray-800 text-base">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                  a provident ea, at repellat architecto beatae omnis neque
-                  necessitatibus alias. Deserunt, ducimus natus sed eos odio ea
-                  excepturi exercitationem aperiam!
-                </p>
-              </div> */}
-            </div>
+            <Transition appear show={isOpen} as={Fragment}>
+              <Dialog as="div" onClose={handleCloseDialog}>
+                {/* Backdrop */}
+                <div
+                  className="fixed inset-0 bg-black opacity-50"
+                  aria-hidden="true"
+                />
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  {/* Full screen container to center panel */}
+                  <div className="fixed inset-0 flex items-center justify-center p-4">
+                    <Dialog.Panel className="p-5 bg-white drop-shadow-md rounded-lg grid grid-rows-[auto_auto_1fr] gap-3">
+                      <p className="capitalize text-teal-600 font-extrabold text-sm">
+                        jun 2016
+                      </p>
+                      <h4 className="text-gray-800 font-bold text-lg">
+                        Graduated @ The University of Birmingham.
+                      </h4>
+                      <p className="text-gray-800 text-base">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Vero a provident ea, at repellat architecto beatae omnis
+                        neque necessitatibus alias. Deserunt, ducimus natus sed
+                        eos odio ea excepturi exercitationem aperiam!
+                      </p>
+                    </Dialog.Panel>
+                  </div>
+                </Transition.Child>
+              </Dialog>
+            </Transition>
           </div>
         </section>
 
