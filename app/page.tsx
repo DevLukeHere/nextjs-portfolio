@@ -12,6 +12,8 @@ import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
 // import { Abhaya_Libre } from "@next/font/google";
 import { useState, Fragment } from "react";
+import Lottie, { useLottie, useLottieInteractivity } from "lottie-react";
+import robotWave from "../public/lotties/robotWave.json";
 import Link from "next/link";
 
 // const abhayaLibre = Abhaya_Libre({
@@ -23,6 +25,15 @@ import Link from "next/link";
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const style = {
+    height: 150,
+    width: 150,
+  };
+  const options = {
+    animationData: robotWave,
+    loop: false,
+  };
+  const { View } = useLottie(options, style);
   const experiences = [
     {
       id: "0",
@@ -108,6 +119,7 @@ export default function Home() {
             </ul>
           </nav>
           <div className="text-center p-10">
+            <div className="flex justify-center">{View}</div>
             <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl font-burtons">
               luke wong
             </h2>
@@ -147,13 +159,13 @@ export default function Home() {
 
         <section>
           <h3 className="text-3xl py-1 dark:text-gray-200">my journey</h3>
-          <div className="my-4 grid md:grid-cols-[auto_1fr]">
+          <div className="my-4 grid md:grid-cols-[auto_1fr] lg:grid-cols-1">
             <div className="flex flex-col items-center">
               <button
                 onClick={handleOpenDialog}
-                className="w-16 h-16 bg-pink-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center"
+                className="w-16 h-16 bg-pink-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center lg:w-24 lg:h-24"
               >
-                <p className="capitalize text-black font-bold text-xs">
+                <p className="capitalize text-black font-bold text-xs lg:text-base">
                   jun 2016
                 </p>
               </button>
@@ -161,9 +173,9 @@ export default function Home() {
 
               <button
                 onClick={handleOpenDialog}
-                className="w-16 h-16 bg-blue-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center"
+                className="w-16 h-16 bg-blue-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center lg:w-24 lg:h-24"
               >
-                <p className="capitalize text-black font-bold text-xs">
+                <p className="capitalize text-black font-bold text-xs lg:text-base">
                   oct 2016
                 </p>
               </button>
@@ -171,9 +183,9 @@ export default function Home() {
 
               <button
                 onClick={handleOpenDialog}
-                className="w-16 h-16 bg-purple-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center"
+                className="w-16 h-16 bg-purple-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center lg:w-24 lg:h-24"
               >
-                <p className="capitalize text-black font-bold text-xs">
+                <p className="capitalize text-black font-bold text-xs lg:text-base">
                   oct 2017
                 </p>
               </button>
@@ -181,9 +193,9 @@ export default function Home() {
 
               <button
                 onClick={handleOpenDialog}
-                className="w-16 h-16 bg-red-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center"
+                className="w-16 h-16 bg-red-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center lg:w-24 lg:h-24"
               >
-                <p className="capitalize text-black font-bold text-xs">
+                <p className="capitalize text-black font-bold text-xs lg:text-base">
                   jul 2019
                 </p>
               </button>
@@ -191,16 +203,16 @@ export default function Home() {
 
               <button
                 onClick={handleOpenDialog}
-                className="w-16 h-16 bg-green-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center"
+                className="w-16 h-16 bg-green-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center lg:w-24 lg:h-24"
               >
-                <p className="capitalize text-black font-bold text-xs">
+                <p className="capitalize text-black font-bold text-xs lg:text-base">
                   dec 2019
                 </p>
               </button>
               <div className="w-1 h-10 bg-white drop-shadow-md"></div>
 
-              <div className="w-16 h-16 bg-yellow-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center">
-                <p className="capitalize text-black font-bold text-xs">
+              <div className="w-16 h-16 bg-yellow-300 rounded-full drop-shadow-md border-4 border-white border-solid grid place-items-center lg:w-24 lg:h-24">
+                <p className="capitalize text-black font-bold text-xs lg:text-base">
                   present
                 </p>
               </div>
@@ -224,7 +236,7 @@ export default function Home() {
                 >
                   {/* Full screen container to center panel */}
                   <div className="fixed inset-0 flex items-center justify-center p-4">
-                    <Dialog.Panel className="p-5 bg-white drop-shadow-md rounded-lg grid grid-rows-[auto_auto_1fr] gap-3">
+                    <Dialog.Panel className="p-5 bg-white drop-shadow-md rounded-lg grid grid-rows-[auto_auto_1fr] gap-3 lg:max-w-screen-md">
                       <p className="capitalize text-teal-600 font-extrabold text-sm">
                         jun 2016
                       </p>
